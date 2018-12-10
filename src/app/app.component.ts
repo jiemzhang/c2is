@@ -26,63 +26,63 @@ export class AppComponent implements OnInit, AfterContentInit {
     },
     {
       index : 2,
-      name: 'assignment one',
+      name: 'assignment two',
       percentageScore: 85,
       status: 'submitted',
       weight: 1
     },
     {
       index : 3,
-      name: 'assignment one',
+      name: 'assignment three',
       percentageScore: 100,
       status: 'submitted',
       weight: 1
     },
     {
       index : 4,
-      name: 'assignment one',
+      name: 'assignment four',
       percentageScore: 70,
       status: 'submitted',
       weight: 1
     },
     {
       index : 5,
-      name: 'assignment one',
+      name: 'assignment five',
       percentageScore: 80,
       status: 'submitted',
       weight: 1
     },
     {
       index : 6,
-      name: 'assignment one',
+      name: 'assignment six',
       percentageScore: 85,
       status: 'submitted',
       weight: 1
     },
     {
       index : 7,
-      name: 'assignment one',
+      name: 'assignment seven',
       percentageScore: 0,
       status: 'assigned',
       weight: 1
     },
     {
       index : 8,
-      name: 'assignment one',
+      name: 'assignment eight',
       percentageScore: 0,
       status: 'assigned',
       weight: 1
     },
     {
       index : 9,
-      name: 'assignment one',
+      name: 'assignment nine',
       percentageScore: 0,
       status: 'assigned',
       weight: 1
     },
     {
       index : 10,
-      name: 'assignment one',
+      name: 'assignment ten',
       percentageScore: 0,
       status: 'assigned',
       weight: 1
