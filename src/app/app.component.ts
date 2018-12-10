@@ -191,8 +191,8 @@ export class AppComponent implements DoCheck, AfterContentInit {
       .attr('transform', 'translate(' + marginLeft + ',' + marginTop + ')');
 
     this.line = d3.line()
-      .x( function(d) { return x(d.index); })
-      .y( function(d) { return y(d.percentageScore); });
+      .x( function(d: any) { return x(d.index); })
+      .y( function(d: any) { return y(d.percentageScore); });
 
     this.chart.append('g')
       .attr('class', 'yAxis')
@@ -250,12 +250,11 @@ export class AppComponent implements DoCheck, AfterContentInit {
 
     this.chart.select('.line')
       .transition()
-      .duration(100)
       .attr('d', line(data));
 
     d3.selectAll('circle') // move the circles
-      .transition().duration(100)
-      .attr('cy', d => y(d.percentageScore));
+      .transition()
+      .attr('cy', (d: any) => y(d.percentageScore));
 
   }
 
