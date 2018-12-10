@@ -1,0 +1,83 @@
+.app-container {
+  margin: 30px;
+  font-family: Helvetica;
+}
+
+.header {
+  height: 50px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+  border-bottom: lightgray 1px solid;
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+}
+
+.stats{
+  margin: 25px 0px;
+
+  .name {
+    font-size: 18px;
+  }
+
+  .value {
+    font-size: 30px;
+    font-weight: 700;
+
+    &.red{
+      color: red;
+    }
+
+    &.orange {
+      color: orange;
+    }
+
+    &.blue {
+      color: steelblue;
+    }
+
+    &.green {
+      color: green;
+    }
+  }
+
+  .legend {
+    font-size: 14px;
+    margin: 15px;
+    .title {
+      font-weight: 700;
+    }
+  }
+}
+
+.controls{
+  margin-top: 80px;
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .subTitle {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .slider {
+    padding-left: 50px;
+    .prompt {
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+    mat-slider {
+      width: 300px;
+      height:100px;
+    }
+  }
+
+}
