@@ -1,4 +1,4 @@
-import { Component, IterableDiffers, DoCheck, AfterContentInit} from '@angular/core';
+import { Component, IterableDiffers, OnInit, AfterContentInit} from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -6,7 +6,7 @@ import * as d3 from 'd3';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements DoCheck, AfterContentInit {
+export class AppComponent implements OnInit, AfterContentInit {
 
   reportDate: string = (new Date() ).toLocaleDateString();
   score = 0;
@@ -115,7 +115,12 @@ export class AppComponent implements DoCheck, AfterContentInit {
     this.differ = differs.find([]).create(null);
   }
 
-  ngDoCheck() {
+  ngOnInit() {
+    this.updateData();
+  }
+
+  updateData() {
+    console.log('updating data changes');
     const change = this.differ.diff(this.assignments);
 
     this.numSubmitted = this.assignments.filter( assn => assn.status === 'submitted' ).length;
@@ -241,7 +246,7 @@ export class AppComponent implements DoCheck, AfterContentInit {
   }
 
   drawChart(data: Assignment[]) {
-
+    console.log('redrawing chart....');
     const line = this.line;
 
     const x = this.xScale;
@@ -260,6 +265,7 @@ export class AppComponent implements DoCheck, AfterContentInit {
 
   handleClick(d) {  // Add interactivity
 
+    console.log(d);
     const assnClass = '.assn' + d.index;
     this.chart.selectAll('circle').attr('r', '10');
     // Use D3 to select element, change color and size
@@ -282,7 +288,7 @@ export class AppComponent implements DoCheck, AfterContentInit {
     const newValue = $event.value;
     // this.assignments[this.selectedAssnIdx].percentageScore = newValue;
     this.displayAssn.percentageScore = newValue;
-
+    this.updateData();
   }
 
 }
